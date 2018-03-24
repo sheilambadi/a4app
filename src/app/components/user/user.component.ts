@@ -36,6 +36,11 @@ export class UserComponent implements OnInit {
     this.hello = 1;
   }
 
+  //on button click event
+  onClick(){
+    this.hobbies.push('Cycling');
+  }
+
 }
 
 //if object has too many items, create an interface or class to map them out
