@@ -40,10 +40,11 @@ export class UserComponent implements OnInit {
     this.hello = 1;
 
     //using the data service
-    this.dataService.getPosts.subscribe((posts) => {
+    this.dataService.getPosts().subscribe((posts) => {
       //console.log(posts);
       this.posts = posts;
     });
+  
   }
 
   //on button click event
