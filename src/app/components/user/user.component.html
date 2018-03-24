@@ -24,6 +24,6 @@
 <ol>
   <li *ngFor = "let hobby of hobbies; let i = index">
     {{i+1}}
-    {{hobby}}
+    {{hobby}} <button (click) = "deleteHobby(hobby)">X</button>
   </li>
 </ol>

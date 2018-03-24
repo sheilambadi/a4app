@@ -48,6 +48,14 @@ export class UserComponent implements OnInit {
     return false;
   }
 
+  deleteHobby(hobby){
+    for(let i=0; i < this.hobbies.length; i++){
+      if(this.hobbies[i] == hobby){
+        this.hobbies.splice(i, 1);
+      }
+    }
+  }
+
 }
 
 //if object has too many items, create an interface or class to map them out
