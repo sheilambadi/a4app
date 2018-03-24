@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  name = 'Sheila Mbadi';
+  //properties with type associated to them
+  name: string;
+  age: number;
+  email: string;
+  address: {
+    street: string,
+    city: string,
+    state: string
+  }
 
   constructor() { 
     console.log("Constructor ran...");
@@ -14,7 +22,18 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    //advised to implement things here
     console.log("ngOnInit ran...");
+
+    //initialize properties
+    this.name = "Mbadi Sheila";
+    this.age = 22;
+    this.email = "mbadisheila@gmail.com";
+    this.address = {
+      street: '87 cedar groove',
+      city: 'Nairobi',
+      state: 'Nairobi County'
+    }
     
   }
 
