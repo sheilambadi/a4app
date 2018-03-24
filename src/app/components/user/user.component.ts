@@ -11,6 +11,8 @@ export class UserComponent implements OnInit {
   age: number;
   email: string;
   address: Address;
+  hobbies: string[];
+  hello: any;
 
   constructor() { 
     console.log("Constructor ran...");
@@ -30,12 +32,13 @@ export class UserComponent implements OnInit {
       city: 'Nairobi',
       state: 'Nairobi County'
     }
-    
+    this.hobbies = ['Coding', 'Watching movies', 'Listening to music'];
+    this.hello = 1;
   }
 
 }
 
-//if object has too many items, create an interface for it
+//if object has too many items, create an interface or class to map them out
 interface Address{
   street: string,
   city: string,
