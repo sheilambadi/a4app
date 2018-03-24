@@ -10,11 +10,7 @@ export class UserComponent implements OnInit {
   name: string;
   age: number;
   email: string;
-  address: {
-    street: string,
-    city: string,
-    state: string
-  }
+  address: Address;
 
   constructor() { 
     console.log("Constructor ran...");
@@ -37,4 +33,11 @@ export class UserComponent implements OnInit {
     
   }
 
+}
+
+//if object has too many items, create an interface for it
+interface Address{
+  street: string,
+  city: string,
+  state: string
 }
