@@ -41,6 +41,13 @@ export class UserComponent implements OnInit {
     this.hobbies.push('Cycling');
   }
 
+  addHobby(hobby){
+    console.log(hobby);
+    //add to the beginning
+    this.hobbies.unshift(hobby);
+    return false;
+  }
+
 }
 
 //if object has too many items, create an interface or class to map them out

@@ -16,6 +16,11 @@
   Hobbies
 </h2>
 
+<form (submit) = "addHobby(hobby.value)">
+  <label for="hobby">Hobby: </label>
+  <input type="text" #hobby>
+</form>
+
 <ol>
   <li *ngFor = "let hobby of hobbies; let i = index">
     {{i+1}}
