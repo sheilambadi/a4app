@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -13,8 +14,11 @@ export class UserComponent implements OnInit {
   address: Address;
   hobbies: string[];
   hello: any;
+  posts: Post[];
+  isEdit: boolean = false;
 
-  constructor() { 
+  //service dependency injection goes into constructor
+  constructor(private dataService:DataService) { 
     console.log("Constructor ran...");
     
   }
@@ -34,6 +38,12 @@ export class UserComponent implements OnInit {
     }
     this.hobbies = ['Coding', 'Watching movies', 'Listening to music'];
     this.hello = 1;
+
+    //using the data service
+    this.dataService.getPosts.subscribe((posts) => {
+      //console.log(posts);
+      this.posts = posts;
+    });
   }
 
   //on button click event
@@ -56,6 +66,10 @@ export class UserComponent implements OnInit {
     }
   }
 
+  toggleEdit(){
+    this.isEdit = !this.isEdit;
+  }
+
 }
 
 //if object has too many items, create an interface or class to map them out
@@ -63,4 +77,11 @@ interface Address{
   street: string,
   city: string,
   state: string
+}
+
+interface Post{
+  id: number,
+  title: string,
+  body: string,
+  userId: string
 }
